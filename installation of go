@@ -83,6 +83,26 @@ Install godotenv
 go get github.com/joho/godotenv
 
 
+// ============================= Execution Flow (Very Important) ======================
+
+Go binary starts
+  ↓
+package main found
+  ↓
+main() called
+  ↓
+Gin initialized
+  ↓
+DB connected
+  ↓
+Tables migrated
+  ↓
+Routes registered
+  ↓
+Server starts listening
+
+
+
 
 
 
