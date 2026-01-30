@@ -23,15 +23,55 @@ func CreateUser(c *gin.Context) {
 Behind the scenes, Gin:
 
 Reads request body
-
 Parses JSON
-
 Maps JSON → struct fields
-
 Runs validation (if tags exist)
-
 Returns error if invalid
 
 Equivalent to:
-
 HttpMessageConverter + Jackson
+
+
+Go struct
+type User struct {
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
+
+
+Gin automatically maps:
+
+name → Name
+email → Email
+
+
+
+Validation comparison (VERY IMPORTANT)
+Spring Boot
+public User create(@Valid @RequestBody User user) {}
+
+Gin
+type User struct {
+	Email string `json:"email" binding:"required,email"`
+}
+
+c.ShouldBindJSON(&user)
+
+
+✔ Same idea
+✔ Struct tags replace annotations
+
+
+
+| Gin                | Spring           |
+| ------------------ | ---------------- |
+| `ShouldBindJSON`   | `@RequestBody`   |
+| `ShouldBindQuery`  | `@RequestParam`  |
+| `ShouldBindUri`    | `@PathVariable`  |
+| `ShouldBindHeader` | `@RequestHeader` |
+| `ShouldBind`       | Auto detect      |
+
+
+
+
+
