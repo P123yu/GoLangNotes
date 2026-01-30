@@ -76,5 +76,14 @@ STEP 11: Run the project
 go run main.go
 
 
+// ==========================  for env file ========================
+
+
+Install godotenv
+go get github.com/joho/godotenv
+
+
+
+
 
 
