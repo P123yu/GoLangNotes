@@ -1,0 +1,80 @@
+Go , Gin (HTTP framework) , GORM (ORM) , PostgreSQL
+
+open PowerShell as an administrator 
+
+1. choco install go or choco install golang
+2. go version  // output=>  go version go1.25.6 windows/amd64
+3. Verify Go path manually (if still not working)
+Run this to check if Go exists:
+dir "C:\Program Files\Go\bin"
+
+
+STEP 1: Create project folder
+mkdir go-gin-gorm-crud
+cd go-gin-gorm-crud
+
+STEP 2: Initialize Go module (VERY IMPORTANT)
+This tells Go how to manage dependencies.
+go mod init github.com/piyush/go-gin-gorm-crud
+
+This creates:
+go.mod
+
+STEP 3: Install required libraries
+go get -u github.com/gin-gonic/gin
+go get -u gorm.io/gorm
+go get -u gorm.io/driver/postgres
+
+// These are now tracked in go.mod
+
+
+STEP 4: Project structure
+
+go-gin-gorm-crud/
+│── main.go
+│
+├── config/
+│   └── database.go
+│
+├── models/
+│   └── user.go
+│
+├── controllers/
+│   └── user_controller.go
+│
+├── routes/
+│   └── routes.go
+│
+└── go.mod
+
+
+STEP 5: PostgreSQL setup
+
+Create database:
+CREATE DATABASE go_crud;
+
+
+STEP 6: Database connection (GORM)
+📄 config/database.go
+
+
+STEP 7: Create Model (Table)
+📄 models/user.go
+
+STEP 8: Auto-migrate table
+📄 main.go
+
+STEP 9: Controller (CRUD logic)
+📄 controllers/user_controller.go
+
+
+STEP 10: Routes
+📄 routes/routes.go
+
+
+STEP 11: Run the project
+go run main.go
+
+
+
+
