@@ -1,0 +1,64 @@
+
+
+✅ Step 1 — Test
+
+choco install make    or    choco install make -y
+
+
+
+✅ Step 2 — Test
+
+PS C:\Users\piyush_kumar> dir "C:\Users\piyush_kumar\AppData\Roaming\npm\lib\make" -Recurse make.exe
+
+
+    Directory: C:\Users\piyush_kumar\AppData\Roaming\npm\lib\make\tools\install\bin
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         5/24/2023   2:25 AM         331425 make.exe
+
+
+✅ Step 3 — Test
+
+PATH Me Add Karo
+
+Same process:
+
+Environment Variables → PATH → New → Add:
+
+C:\Users\piyush_kumar\AppData\Roaming\npm\lib\make
+
+
+
+
+Restart terminal.
+
+✅ Step 4 — Test
+make --version
+
+
+
+
+✅ Step 5 — Check
+
+PS C:\Users\piyush_kumar>
+>> make --version
+GNU Make 4.4.1
+Built for Windows32
+Copyright (C) 1988-2023 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+
+✅ Step 6 — Run
+
+
+PS C:\Users\piyush_kumar> cd D:\GO\student-system
+
+PS D:\GO\student-system> make install-all
+# Gin framework for HTTP APIs
+go get github.com/gin-gonic/gin .....
+
+
